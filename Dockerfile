@@ -18,7 +18,7 @@ RUN apt-get -y install locales apt-utils sudo
 #ENV LANG en_US.utf8
 
 # install qemu
-RUN apt-get install qemu-user-static debootstrap binfmt-support
+RUN apt-get -y install qemu-user-static debootstrap binfmt-support
 
 # Clean up APT when done
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

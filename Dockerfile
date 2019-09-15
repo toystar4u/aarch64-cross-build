@@ -41,11 +41,9 @@ WORKDIR /home/build
 ENV ROOTFS_PATH "/home/build/underwatercomm_rootfs"
 RUN git clone https://toystar@bitbucket.org/toystar/underwatercomm_rootfs.git
 
-# Install FSL community BSP
-RUN cd underwatercomm_rootfs
 
 # ignore errors 
-RUN tar -xvf ${ROOTFS_PATH}/underwater-rootfs-vanilla.tgz; exit 0
+RUN tar -xvf ${ROOTFS_PATH}/underwater-rootfs-vanilla.tgz -C ${ROOTFS_PATH}; exit 0
 RUN rm -rf ${ROOTFS_PATH}/underwater-rootfs-vanilla.tgz ${ROOTFS_PATH}/.git ${ROOTFS_PATH}/README.md
 
 # Make /home/build the working directory

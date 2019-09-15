@@ -34,8 +34,6 @@ RUN usermod -a -G users build
 
 
 # Run as build user from the installation path
-ENV YOCTO_INSTALLATION_PATH "/opt/yocto"
-RUN install -o 1000 -g 1000 -d ${YOCTO_INSTALLATION_PATH}
 USER build 
 WORKDIR /home/build
 

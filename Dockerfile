@@ -37,15 +37,14 @@ RUN usermod -a -G users build
 USER build 
 WORKDIR /home/build
 
-
-
-# Install Poky
+# 
+ENV ROOTFS_PATH "/home/build/underwatercomm_rootfs"
 RUN git clone https://toystar@bitbucket.org/toystar/underwatercomm_rootfs.git
 
 # Install FSL community BSP
 RUN cd underwatercomm_rootfs
-RUN tar -xvf underwater-rootfs-vanilla.tgz
-RUN rm -rf ./underwater-rootfs-vanilla.tgz ./.git ./README.md
+RUN tar -xvf ${ROOTFS_PATH}/underwater-rootfs-vanilla.tgz
+RUN rm -rf ${ROOTFS_PATH}/underwater-rootfs-vanilla.tgz ${ROOTFS_PATH}/.git ${ROOTFS_PATH}/README.md
 
 # Make /home/build the working directory
 WORKDIR /home/build

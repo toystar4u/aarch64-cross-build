@@ -12,7 +12,7 @@ RUN apt-get -y upgrade
 RUN apt-get -y install apt-utils gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping libsdl1.2-dev xterm curl
 
 # Setup locale
-#RUN apt-get -y install locales apt-utils sudo
+RUN apt-get -y install locales apt-utils sudo
 #RUN dpkg-reconfigure locales 
 #RUN locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 
 #ENV LANG en_US.utf8
@@ -45,6 +45,7 @@ RUN git clone https://toystar@bitbucket.org/toystar/underwatercomm_rootfs.git
 # ignore errors 
 RUN tar -xvf ${ROOTFS_PATH}/underwater-rootfs-vanilla.tgz -C ${ROOTFS_PATH}; exit 0
 RUN rm -rf ${ROOTFS_PATH}/underwater-rootfs-vanilla.tgz ${ROOTFS_PATH}/.git ${ROOTFS_PATH}/README.md
+
 
 # Make /home/build the working directory
 WORKDIR /home/build

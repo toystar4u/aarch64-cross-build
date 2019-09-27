@@ -9,7 +9,7 @@ LABEL description=" aarch64 cross-build environment(debian9 rootfs)"
 # Upgrade system and Yocto Project basic dependenies
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get -y install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping libsdl1.2-dev xterm curl
+RUN apt-get -y install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping libsdl1.2-dev xterm curl 무ㅜㅐ
 
 # Setup locale
 RUN apt-get -y install locales apt-utils sudo
